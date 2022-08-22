@@ -1,5 +1,8 @@
 import React from 'react';
+import {Chart as ChartJs, ArcElement} from 'chart.js'
 import { Doughnut } from 'react-chartjs-2';
+import { Flex } from '@chakra-ui/layout';
+ChartJs.register(ArcElement);
 
 const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -30,10 +33,13 @@ const data = {
 
 export function Chart() {
   return (
-      <div>
+      <Flex>
         <Doughnut
             data={data}
+            width={1000}
+            height={500}
+            options={{ maintainAspectRatio: false }}
         />
-      </div>
+      </Flex>
   )
 }

@@ -7,7 +7,7 @@ import {
   useLocation,
   Navigate,
 } from 'react-router-dom'
-// import { Layout } from '../layout'
+import { AppLayout as Layout } from '../layout'
 import { Home } from '../pages'
 
 export const routesObject = {
@@ -26,9 +26,9 @@ const RoutesDeclaration = () => {
       <Route
         path={`${home}`}
         element={
-          // <Layout>
+          <Layout>
             <Home />
-          // </Layout> 
+          </Layout> 
         }
       />
       <Route
@@ -43,11 +43,11 @@ export const AppRoutes = () => (
   <BrowserRouter>
     <Suspense
       fallback={
-        // <Layout>
+        <Layout>
           <Center height="100%">
             <Spinner h={20} w={20} />
           </Center>
-        // </Layout>
+        </Layout>
       }
     >
       <RoutesDeclaration />
